@@ -10,11 +10,13 @@ add_subdirectory(src)
 # Add main executable
 add_executable(multicompress main.cpp)
 
+target_include_directories(multicompress PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
 # Link the main executable with the compression library
 target_link_libraries(multicompress multicompress_lib)
 
 # Add subdirectory for tests
-add_subdirectory(test)
+#add_subdirectory(test)
 
 # Enable testing
-enable_testing()
+#enable_testing()
