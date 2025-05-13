@@ -34,11 +34,11 @@ bool compress(const std::string& inputPath, const std::string& outputPath){
             i += runLength - 1;
         }
     }
-    if(inputFile.eof() && !inputFile.gcount() > 0){
-        for(size_t i=0; i<inputFile.gcount(); ++i){
+    if(inputFile.eof() && inputFile.gcount() > 0){
+        for(size_t i=0; i< static_cast<size_t>(inputFile.gcount()); ++i){
             unsigned char currentByte = buffer[i];
             size_t runLength = 1;
-            while(i + runLength < inputFile.gcount() && buffer[i+runLength] == currentByte && runLength < 255){
+            while(i + runLength < static_cast<size_t>(inputFile.gcount()) && buffer[i+runLength] == currentByte && runLength < 255){
                 runLength++;
             }
             outputFile.write(reinterpret_cast<const char*>(&runLength), sizeof(runLength));

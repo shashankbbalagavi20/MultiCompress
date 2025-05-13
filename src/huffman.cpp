@@ -1,10 +1,11 @@
-#include "include/huffman.hpp"
+#include "../include/huffman.hpp"
 #include "fstream"
 #include <iostream>
 #include <queue>
 #include <map>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 namespace huffman {
 

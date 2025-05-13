@@ -6,8 +6,8 @@
 
 namespace rle {
 
-bool compress(const std::string& input, std::string& output);
-bool decompress(const std::string& input, std::string& output);
+bool compress(const std::string& inputPath, const std::string& outputPath);
+bool decompress(const std::string& inputPath, const std::string& outputPath);
 
 } // namespace rle
 

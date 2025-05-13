@@ -1,0 +1,1 @@
+#add_executable(multicompress_test test_main.cpp)
